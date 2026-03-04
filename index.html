@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hex ↔ ASCII Converter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1>Hex ↔ ASCII Converter</h1>
+        <p>제조업 현장에서 빠르게 사용할 수 있는 양방향 변환 도구</p>
+      </header>
+
+      <section class="converter" aria-label="변환기">
+        <div class="converter__toolbar">
+          <label for="mode">변환 모드</label>
+          <select id="mode" aria-label="변환 모드 선택">
+            <option value="hexToAscii">Hex → ASCII</option>
+            <option value="asciiToHex">ASCII → Hex</option>
+          </select>
+          <button id="swapBtn" type="button" class="btn btn--secondary">스왑</button>
+        </div>
+
+        <div class="converter__panes">
+          <div class="pane">
+            <label id="inputLabel" for="inputText">Hex 입력</label>
+            <textarea id="inputText" rows="8" placeholder="예: 48 65 6C 6C 6F"></textarea>
+          </div>
+
+          <div class="pane pane--arrow" aria-hidden="true">⇄</div>
+
+          <div class="pane">
+            <label id="outputLabel" for="outputText">ASCII 결과</label>
+            <textarea id="outputText" rows="8" readonly placeholder="변환 결과가 여기에 표시됩니다"></textarea>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="convertBtn" type="button" class="btn btn--primary">변환</button>
+          <button id="clearBtn" type="button" class="btn">초기화</button>
+          <button id="copyBtn" type="button" class="btn">결과 복사</button>
+        </div>
+
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
